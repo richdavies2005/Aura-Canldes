@@ -1,0 +1,115 @@
+/* CSS variables */
+:root {
+    --font-default-family: 'Time New Roman', Time, serif;
+
+    --color-bg: #fff;
+    --color-fg: #000;
+
+    --padding-body: 0.5rem;
+}
+
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Enable the outline css below to give everything an outline */
+    /* outline: 1px solid red; */
+}
+
+/* Base document styles */
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    font-size: 16px;
+    /* scroll-behavior: smooth; */
+}
+
+body {
+    font-family: var(--font-default-family);
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+}
+
+::selection {
+    background-color: lightpink;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: pink;
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: var(--padding-body);
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main, section{
+    height: 100%;
+}
+
+section.half {
+    height: calc(100% / 2);
+    background-color: pink;
+}
+
+.splash {
+    display: flex;
+    flex-direction: row;
+}
+
+.splash-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+.splash-content div {
+    max-width: 75%;
+}
+
+.splash-content h1 {
+    font-size: 5rem;
+}
+
+.splash-img {
+    width: 50%;
+    height: 100%;
+    background: url("../images/1080placeholder.png") center center no-repeat;
+}
+
+@media screen and (max-width: 899px) {
+    .splash-img {
+        display: none;
+    }
+
+    .splash-content {
+        width: 100%;
+        text-align: center;
+    }
+}
